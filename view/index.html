@@ -1,0 +1,44 @@
+
+<div class="container" ng-controller="MessengerController">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Комната подключенных к телеграмм боту</h2>
+            <h4 ng-bind="Messages.getConnects()"></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4">
+            <div class="row">
+                <div class="col-lg-12 list" ng-show="Messages.getUsers().length > 0" ng-repeat="user in Messages.getUsers() | orderBy:'name'">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object avatar" src={{Messages.getPhotoPath(user.photo)}} alt={{ user.name }} />
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading" ng-bind="user.name"></h4>
+                            <div><span class="text-danger">Не верных ответов <span class="text-danger" ng-bind="user.count_err"></span></span></div>
+                            <div><span class="text-success">Верных ответов <span class="text-success" ng-bind="user.count_right"></span></span></div>
+                            <div>Я в игре <span class="glyphicon glyphicon-align-left" ng-class="Messages.getStatus(user.status)" aria-hidden="true"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-8">
+            <div class="podium">
+                <div class="first-win" ng-show="Messages.getFirstWin() != null">
+                    <img class="media-object" style="width: 100px; height: 100px;" src={{Messages.getPhotoPath(Messages.getFirstWin().photo)}} alt={{ FirstWinner.name }} />
+                    <h4 class="media-heading" ng-bind="Messages.getFirstWin().name"></h4>
+                </div>
+                <div class="second-win" ng-show="Messages.getSecond() != null">
+                    <img class="media-object" style="width: 100px; height: 100px;" src={{Messages.getPhotoPath(Messages.getSecond().photo)}} alt={{ FirstWinner.name }} />
+                    <h4 class="media-heading" ng-bind="Messages.getSecond().name"></h4>
+                </div>
+                <div class="last-win" ng-show="Messages.getLastWin() != null">
+                    <img class="media-object" style="width: 100px; height: 100px;" src={{Messages.getPhotoPath(Messages.getLastWin().photo)}} alt={{ FirstWinner.name }} />
+                    <h4 class="media-heading" ng-bind="Messages.getLastWin().name"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

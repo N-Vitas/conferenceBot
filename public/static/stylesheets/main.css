@@ -1,0 +1,66 @@
+body { padding-bottom: 70px; padding-top: 70px; }
+#container
+{
+    background:#fff;
+    margin:0 auto;
+    text-align:center;
+}
+.podium
+{
+    position: relative;
+    background-image: url('/static/images/podium.png');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 420px;
+    width: 450px;
+    height: 300px;
+    margin: 0px auto;
+}
+.first-win
+{
+    position: absolute;
+    top: 0;
+    left: 147px;
+    width: 155px;
+    height: 135px;
+}
+.second-win
+{
+    position: absolute;
+    top: 59px;
+    left: 14px;
+    width: 135px;
+    height: 135px;
+}
+.last-win
+{
+    position: absolute;
+    top: 85px;
+    left: 300px;
+    width: 135px;
+    height: 135px;
+}
+.podium > div > img
+{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0px auto;
+}
+.podium > div > h4
+{
+    text-align: center;
+    font-weight: bold;
+    color: #1c9ad7;
+}
+.avatar
+{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.list
+{
+    padding: 5px;
+    border-bottom: 1px solid #8ca68c;
+}
